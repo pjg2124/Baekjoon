@@ -9,16 +9,16 @@ public class Baekjoon2751 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
-        ArrayList<Integer> arr = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < N; i++) {
-            arr.add(Integer.parseInt(br.readLine()));
+            list.add(Integer.parseInt(br.readLine()));
         }
 
-        Collections.sort(arr);
+        Collections.sort(list);
 
         for (int i = 0; i < N; i++) {
-            sb.append(arr.get(i)).append("\n");
+            sb.append(list.get(i)).append("\n");
         }
         System.out.println(sb);
     }
