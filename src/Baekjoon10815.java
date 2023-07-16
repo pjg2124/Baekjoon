@@ -33,6 +33,7 @@ public class Baekjoon10815 {
                 sb.append("0 ");
             }
         }
+
         System.out.println(sb);
 
     }
