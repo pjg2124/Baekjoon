@@ -14,9 +14,9 @@ public class Baekjoon1940 {
 
         Arrays.sort(arr);
 
-        int start = 0, end = N-1, cnt = 0;
+        int start = 0, end = N - 1, cnt = 0;
 
-        while(arr[start] < arr[end]) {
+        while (arr[start] < arr[end]) {
             if (arr[start] + arr[end] < M) start++;
             else if (arr[start] + arr[end] > M) end--;
             else {
