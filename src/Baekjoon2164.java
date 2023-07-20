@@ -7,7 +7,7 @@ public class Baekjoon2164 {
         Queue<Integer> q = new LinkedList<>();
 
         for (int i = 1; i <= N; i++)
-            q.add(i);
+            q.offer(i);
 
         int idx = 0;
         while (!(q.size() == 1)) {
