@@ -7,12 +7,12 @@ public class Baekjoon2606 {
         int nodes = Integer.parseInt(br.readLine());
         int edges = Integer.parseInt(br.readLine());
 
-        int[][] matrix = new int[nodes+1][nodes+1];
+        int[][] graphs = new int[nodes+1][nodes+1];
         for (int i = 1; i <= edges; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
             int m = Integer.parseInt(st.nextToken());
-            matrix[n][m] = matrix[m][n] = 1;
+            graphs[n][m] = graphs[m][n] = 1;
         }
 
         Queue<Integer> queue = new LinkedList<>();
@@ -23,7 +23,7 @@ public class Baekjoon2606 {
         while (!queue.isEmpty()) {
             int n = queue.poll();
             for (int i = 1; i <= nodes; i++) {
-                if (matrix[n][i] == 1 && !visit[i]) {
+                if (graphs[n][i] == 1 && !visit[i]) {
                     queue.offer(i);
                     visit[i] = true;
                     cnt++;
