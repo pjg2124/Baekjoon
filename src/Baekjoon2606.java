@@ -7,7 +7,7 @@ public class Baekjoon2606 {
         int nodes = Integer.parseInt(br.readLine());
         int edges = Integer.parseInt(br.readLine());
 
-        int[][] graphs = new int[nodes+1][nodes+1];
+        int[][] graph = new int[nodes+1][nodes+1];
         for (int i = 1; i <= edges; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
