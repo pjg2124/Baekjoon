@@ -12,7 +12,7 @@ public class Baekjoon2606 {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
             int m = Integer.parseInt(st.nextToken());
-            graphs[n][m] = graphs[m][n] = 1;
+            graph[n][m] = graph[m][n] = 1;
         }
 
         Queue<Integer> queue = new LinkedList<>();
@@ -23,7 +23,7 @@ public class Baekjoon2606 {
         while (!queue.isEmpty()) {
             int n = queue.poll();
             for (int i = 1; i <= nodes; i++) {
-                if (graphs[n][i] == 1 && !visit[i]) {
+                if (graph[n][i] == 1 && !visit[i]) {
                     queue.offer(i);
                     visit[i] = true;
                     cnt++;
