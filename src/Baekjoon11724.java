@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 public class Baekjoon11724 {
     public static int[][] graph;
     public static boolean[] visit;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -24,22 +25,23 @@ public class Baekjoon11724 {
         }
 
         Queue<Integer> queue = new LinkedList<>();
-        queue.offer(1);
-        visit[1] = true;
         int cnt = 0;
-        while (true) {
-            while (!queue.isEmpty()) {
+
+        for (int i = 1; i <= N; i++) {
+            if (visit[i]) continue;
+            queue.offer(i);
+            visit[i] = true;
+
+            while(!queue.isEmpty()) {
                 int n = queue.poll();
-                for (int i = 1; i <= N; i++) {
-                    if (graph[n][i] == 1 && !visit[i]) {
-                        queue.offer(i);
-                        visit[i] = true;
-                        cnt++;
+                for (int j = 1; j <= N; j++) {
+                    if (graph[n][j] == 1 && !visit[j]) {
+                        queue.offer(j);
+                        visit[j] = true;
                     }
                 }
             }
-
-            if (queue.peek() == N) break;
+            cnt++;
         }
 
         System.out.println(cnt);
